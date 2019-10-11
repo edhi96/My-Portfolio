@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backgroundPath"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/collapsing_toolbar2"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.DetailTvShowActivity"
+    tools:showPaths="true">
+
+    <ImageView
+        android:id="@+id/bgDetailsTv"
+        android:layout_width="0dp"
+        android:layout_height="310dp"
+        android:contentDescription="@string/image_detail_movie"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/backBtnTv"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:contentDescription="@string/backBtn"
+        android:padding="16dp"
+        android:src="@drawable/ic_arrow_back_white_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/favDetailStatusTv"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:src="@drawable/ic_favorite_remove_32dp"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/image_detail_movie" />
+
+    <ImageView
+        android:id="@+id/imgDetailsTv"
+        android:layout_width="165dp"
+        android:layout_height="155dp"
+        android:contentDescription="@string/image_detail_movie"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@id/bgDetailsTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvDetailTitleTv"
+        style="@style/TextSpec.Title"
+        app:layout_constraintBottom_toBottomOf="@+id/imgDetailsTv"
+        app:layout_constraintEnd_toEndOf="@+id/imgDetailsTv"
+        app:layout_constraintStart_toStartOf="@+id/imgDetailsTv"
+        tools:text="Title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollViewTv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDetailTitleTv">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView">
+            <ProgressBar
+                android:id="@+id/progressDetailTv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/detail_releaseDateTv"
+                style="@style/TextSpec.Field"
+                android:text="@string/release_date"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progressDetailTv"
+                tools:text="Release Date" />
+            <TextView
+                android:id="@+id/tvDetailReleaseTv"
+                style="@style/TextSpec.Value"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_releaseDateTv"
+                tools:text="Release Date" />
+
+            <TextView
+                android:id="@+id/last_air_date"
+                style="@style/TextSpec.Field"
+                android:text="@string/last_air_date"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailReleaseTv"
+                tools:text="Last Air Date" />
+
+            <TextView
+                android:id="@+id/tvDetailLastAirDateTv"
+                style="@style/TextSpec.Value"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/last_air_date"
+                tools:text="Last Air Date" />
+
+            <TextView
+                android:id="@+id/overviewTv"
+                android:text="@string/overview"
+                style="@style/TextSpec.Field"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailLastAirDateTv"
+                tools:text="Overview" />
+
+            <TextView
+                android:id="@+id/tvDetailOverviewTv"
+                style="@style/TextSpec.Value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/overviewTv"
+                tools:text="Overview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.motion.widget.MotionLayout>
