@@ -1,4 +1,4 @@
-# tv show movie catalog
+# Project to get an Android Developer Expert certificate.
 This is a project that I completed, to get an Android Developer Expert certificate.
 Im use kotlin for language
 Retrofit REST API
